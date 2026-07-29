@@ -1,0 +1,72 @@
+class Stack:
+    def __init__ (self):
+        self.stack=[]
+
+    def push(self,item):
+        self.stack.append(item)
+        print(f"{item} pushed to top")
+
+    def pop(self):
+        if self.is_empty():
+            return "Stack underflow"
+        return self.stack.pop()
+
+    def peek(self):
+        if self.is_empty():
+            return"Stack is empty"
+        return self.stack[-1]
+    
+    def is_empty(self):
+        return len(self.stack)==0
+    
+    def size(self):
+        return len(self.stack)
+    
+    def display(self):
+        print("Stack elements:",self.stack)
+
+
+
+ob=Stack()
+
+while True:
+    print("1. Pushing an book into the stack")
+    print("2. Popping an book into the stack")
+    print("3. Peeking")
+    print("4. check whether the stack is empty")
+    print("5. Displaying size of the book stack")
+    print("6. Displaying all the books in the stack")
+
+    chch=input("Enter your choice!")
+
+    if chch=='1':
+        a=input("Enter book name to push:")
+        ob.push(a)
+
+    elif chch=='2':
+        b=ob.pop()
+        print("Book removed from the stack")
+
+    elif chch=='3':
+        c=ob.peek()
+        print(c)
+
+    elif chch=='4':
+        d=ob.is_empty()
+        print(d)
+
+    elif chch=='5':
+        e=ob.size()
+        print(e)
+
+    elif chch=='6':
+        f=ob.display()
+        print(f)
+
+    elif chch=='7':
+        print("Exiting the program")
+        break
+
+    else:
+        print("Invalid Input")
+    
